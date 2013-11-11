@@ -13,9 +13,6 @@
   "repository": {
     "type": "git",
     "url": "git://github.com/ivantage/grunt-svn-bump.git"
-  },{
-    "type": ""
-    "url": "http://www.ivantagehealth.com/"
   },
   "bugs": {
     "url": "https://github.com/ivantage/grunt-svn-bump/issues"
