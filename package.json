@@ -1,23 +1,29 @@
 {
-  "name": "grunt-contrib-bump",
+  "name": "grunt-svn-bump",
   "description": "Bump the version property of a JSON file.",
   "version": "0.1.0",
-  "homepage": "https://github.com/gruntjs/grunt-contrib-bump",
-  "author": {
+  "homepage": "https://github.com/ivantage/grunt-svn-bump",
+  "author": [{
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
-  },
+  },{
+    "type": ""
+    "url": "http://www.ivantagehealth.com/"
+  }],
   "repository": {
     "type": "git",
-    "url": "git://github.com/gruntjs/grunt-contrib-bump.git"
+    "url": "git://github.com/ivantage/grunt-svn-bump.git"
+  },{
+    "type": ""
+    "url": "http://www.ivantagehealth.com/"
   },
   "bugs": {
-    "url": "https://github.com/gruntjs/grunt-contrib-bump/issues"
+    "url": "https://github.com/ivantage/grunt-svn-bump/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/gruntjs/grunt-contrib-bump/blob/master/LICENSE-MIT"
+      "url": "https://github.com/ivantage/grunt-svn-bump/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
