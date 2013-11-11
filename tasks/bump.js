@@ -42,7 +42,7 @@ module.exports = function(grunt) {
       filepaths: ['package.json'],
       syncVersions: false,
       commit: true,
-      commitMessage: 'Bumping version to {%= version %}.',
+      commitMessage: 'admin: Tag for release ({%= version %})',
       tag: true,
       tagName: 'v{%= version %}',
       tagMessage: 'Version {%= version %}',
