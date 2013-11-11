@@ -1,4 +1,4 @@
-# grunt-contrib-bump v0.1.0
+# grunt-contrib-bump v0.1.1
 
 *This is mostly a copy of [grunt-contrib-bump](https://github.com/gruntjs/grunt-contrib-bump) for svn projects.*
 
