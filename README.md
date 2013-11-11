@@ -1,7 +1,8 @@
 # grunt-contrib-bump v0.1.0
 
-> Bump the version property of a JSON file.
+*This is mostly a copy of [grunt-contrib-bump](https://github.com/gruntjs/grunt-contrib-bump) for svn projects.*
 
+> Bump the version property of a JSON file.
 
 ## WORK IN PROGRESS (unreleased)
 
