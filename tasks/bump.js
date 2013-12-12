@@ -47,6 +47,7 @@ module.exports = function(grunt) {
       tagName: 'v{%= version %}',
       tagMessage: 'Version {%= version %}',
       tagPrerelease: false,
+      updateDate: true,
     });
     // Normalize filepaths to array.
     var filepaths = Array.isArray(options.filepaths) ? options.filepaths : [options.filepaths];
@@ -81,6 +82,14 @@ module.exports = function(grunt) {
         versions[origVersion].filepaths.push(filepath);
       } else {
         versions[origVersion] = {version: o.version, filepaths: [filepath]};
+      }
+      // Update the date attribute
+      if(options.updateDate && o.date !== undefined) {
+        var d = new Date()
+          , month = d.getMonth() + 1
+          , day = d.getDate()
+          , year = d.getFullYear();
+        o.date = month + '/' + day + '/' + year;
       }
       // Actually *do* something.
       grunt.log.write('Bumping version in ' + filepath + ' from ' + origVersion + ' to ' + o.version + '...');
