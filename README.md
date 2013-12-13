@@ -78,6 +78,12 @@ Default: `false`
 
 Whether to tag prerelease versions.
 
+#### updateDate
+Type: `Boolean`
+Default: `true`
+
+Whether to set the `date` attribute, if it exists, to the current date.
+
 ### Usage examples
 
 ```bash
