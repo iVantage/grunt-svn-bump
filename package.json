@@ -1,13 +1,13 @@
 {
   "name": "grunt-svn-bump",
   "description": "Bump the version property of a JSON file.",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "homepage": "https://github.com/ivantage/grunt-svn-bump",
   "author": [{
     "name": "Grunt Team",
     "url": "http://gruntjs.com/"
   },{
-    "name": "iVantage",
+    "name": "iVantage Health Analytics",
     "url": "http://www.ivantagehealth.com/"
   }],
   "repository": {

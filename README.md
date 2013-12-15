@@ -1,10 +1,12 @@
-# grunt-svn-bump v0.1.1
+# grunt-svn-bump v0.2.0
 
 *This is mostly a copy of [grunt-contrib-bump](https://github.com/gruntjs/grunt-contrib-bump) for svn projects.*
 
-> Bump the version property of a JSON file.
+> Bump the version property of a JSON file, the date property if it exists, and
+> commit those changes.
 
-## WORK IN PROGRESS (unreleased)
+Note that this will *commit* your bump changes but will not create a *tag* the
+repo afterwards. See [grunt-svn-tag](https://github.com/iVantage/grunt-svn-tag).
 
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
@@ -112,14 +114,3 @@ grunt bump:ma:pr   # still works, eg. 1.0.2 -> 2.0.0-0
 grunt bump:mi:pr   # still works, eg. 0.1.3 -> 0.2.0-0
 grunt bump:pa:pr   # still works, eg. 0.0.1 -> 0.0.2-0
 ```
-
-
-## Release History
-
- * 2013-10-15   v0.1.0   Work in progress, not yet officially released.
-
----
-
-Task submitted by ["Cowboy" Ben Alman](http://benalman.com/)
-
-*This file was generated on Thu Oct 24 2013 10:42:13.*
