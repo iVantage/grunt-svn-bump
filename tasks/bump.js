@@ -34,11 +34,7 @@ module.exports = function(grunt) {
       filepaths: ['package.json'],
       syncVersions: false,
       commit: true,
-      commitMessage: 'admin: Tag for release ({%= version %})',
-      tag: true,
-      tagName: 'v{%= version %}',
-      tagMessage: 'Version {%= version %}',
-      tagPrerelease: false,
+      commitMessage: 'admin: Bump version for release ({%= version %})',
       updateDate: true
     });
     // Normalize filepaths to array.
@@ -98,19 +94,6 @@ module.exports = function(grunt) {
         }));
       });
     }
-    // We're only going to create one tag. And it's going to be the new
-    // version of the first bumped file. Because, sanity.
-    var newVersion = versions[Object.keys(versions)[0]].version;
-    if (options.tag) {
-      if (options.tagPrerelease || modes.indexOf('prerelease') === -1) {
-        tag(
-          processTemplate(options.tagName, {version: newVersion}),
-          processTemplate(options.tagMessage, {version: newVersion})
-        );
-      } else {
-        grunt.log.writeln('Not tagging (prerelease version).');
-      }
-    }
     if (this.errorCount > 0) {
       grunt.warn('There were errors.');
     }
@@ -130,11 +113,6 @@ module.exports = function(grunt) {
   function commit(filepaths, message) {
     grunt.log.writeln('Committing ' + filepaths.join(', ') + ' with message: ' + message);
     run('svn ci "' + filepaths.join('" "') + '" -m "' + message + '"');
-  }
-
-  function tag(name, message) {
-    grunt.log.writeln('Tagging ' + name + ' with message: ' + message);
-    run('svn cp "^/trunk" "^/tags/' + name + '" -m "' + message + '"');
   }
 
   function run(cmd) {
