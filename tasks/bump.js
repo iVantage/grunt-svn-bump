@@ -1,11 +1,3 @@
-/*
- * grunt-contrib-bump
- * http://gruntjs.com/
- *
- * Copyright (c) 2013 "Cowboy" Ben Alman, contributors
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 var semver = require('semver');
@@ -47,7 +39,7 @@ module.exports = function(grunt) {
       tagName: 'v{%= version %}',
       tagMessage: 'Version {%= version %}',
       tagPrerelease: false,
-      updateDate: true,
+      updateDate: true
     });
     // Normalize filepaths to array.
     var filepaths = Array.isArray(options.filepaths) ? options.filepaths : [options.filepaths];
@@ -130,7 +122,7 @@ module.exports = function(grunt) {
   function processTemplate(message, data) {
     return grunt.template.process(message, {
       delimiters: 'bump',
-      data: data,
+      data: data
     });
   }
 
