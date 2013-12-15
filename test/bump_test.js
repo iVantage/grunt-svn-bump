@@ -9,7 +9,7 @@ var tmp = path.resolve(__dirname, '..', 'tmp', 'package.json');
 function testbump(cmd, cb) {
   grunt.util.spawn({
     grunt: true,
-    args: [cmd, '--no-color'],
+    args: [cmd, '--no-color']
   }, function(err, result) {
     if (err) { throw new Error(err); }
     // If verbose is set output the results from the spawned command for debugging
@@ -60,5 +60,5 @@ exports.bump = {
       test.equal(grunt.file.readJSON(tmp).version, '0.1.1-0', 'Should have written the version to the file.');
       test.done();
     });
-  },
+  }
 };
