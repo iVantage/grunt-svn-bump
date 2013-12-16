@@ -137,7 +137,7 @@ module.exports = function(grunt) {
   }
 
   function run(cmd) {
-    if (grunt.option('no-write')) {
+    if (grunt.option('dry-run')) {
       grunt.verbose.writeln('Not actually running: ' + cmd);
     } else {
       grunt.verbose.writeln('Running: ' + cmd);
