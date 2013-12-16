@@ -1,11 +1,3 @@
-/*
- * grunt-contrib-bump
- * http://gruntjs.com/
- *
- * Copyright (c) 2013 "Cowboy" Ben Alman, contributors
- * Licensed under the MIT license.
- */
-
 'use strict';
 
 var semver = require('semver');
@@ -42,11 +34,8 @@ module.exports = function(grunt) {
       filepaths: ['package.json'],
       syncVersions: false,
       commit: true,
-      commitMessage: 'admin: Tag for release ({%= version %})',
-      tag: true,
-      tagName: 'v{%= version %}',
-      tagMessage: 'Version {%= version %}',
-      tagPrerelease: false,
+      commitMessage: 'admin: Bump version for release ({%= version %})',
+      updateDate: true
     });
     // Normalize filepaths to array.
     var filepaths = Array.isArray(options.filepaths) ? options.filepaths : [options.filepaths];
@@ -82,6 +71,14 @@ module.exports = function(grunt) {
       } else {
         versions[origVersion] = {version: o.version, filepaths: [filepath]};
       }
+      // Update the date attribute
+      if(options.updateDate && o.date !== undefined) {
+        var d = new Date()
+          , month = d.getMonth() + 1
+          , day = d.getDate()
+          , year = d.getFullYear();
+        o.date = month + '/' + day + '/' + year;
+      }
       // Actually *do* something.
       grunt.log.write('Bumping version in ' + filepath + ' from ' + origVersion + ' to ' + o.version + '...');
       grunt.file.write(filepath, JSON.stringify(o, null, 2));
@@ -97,19 +94,6 @@ module.exports = function(grunt) {
         }));
       });
     }
-    // We're only going to create one tag. And it's going to be the new
-    // version of the first bumped file. Because, sanity.
-    var newVersion = versions[Object.keys(versions)[0]].version;
-    if (options.tag) {
-      if (options.tagPrerelease || modes.indexOf('prerelease') === -1) {
-        tag(
-          processTemplate(options.tagName, {version: newVersion}),
-          processTemplate(options.tagMessage, {version: newVersion})
-        );
-      } else {
-        grunt.log.writeln('Not tagging (prerelease version).');
-      }
-    }
     if (this.errorCount > 0) {
       grunt.warn('There were errors.');
     }
@@ -121,7 +105,7 @@ module.exports = function(grunt) {
   function processTemplate(message, data) {
     return grunt.template.process(message, {
       delimiters: 'bump',
-      data: data,
+      data: data
     });
   }
 
@@ -129,11 +113,6 @@ module.exports = function(grunt) {
   function commit(filepaths, message) {
     grunt.log.writeln('Committing ' + filepaths.join(', ') + ' with message: ' + message);
     run('svn ci "' + filepaths.join('" "') + '" -m "' + message + '"');
-  }
-
-  function tag(name, message) {
-    grunt.log.writeln('Tagging ' + name + ' with message: ' + message);
-    run('svn cp "^/trunk" "^/tags/' + name + '" -m "' + message + '"');
   }
 
   function run(cmd) {

@@ -1,13 +1,20 @@
 {
+  "node": true,
+  "bitwise": true,
+  "camelcase": false,
   "curly": true,
   "eqeqeq": true,
   "immed": true,
-  "latedef": "nofunc",
+  "latedef": true,
   "newcap": true,
   "noarg": true,
-  "sub": true,
+  "quotmark": "single",
+  "regexp": true,
   "undef": true,
-  "boss": true,
-  "eqnull": true,
-  "node": true
+  "unused": false,
+  "strict": true,
+  "trailing": true,
+  "smarttabs": false,
+  "laxcomma": true,
+  "onevar": false
 }
