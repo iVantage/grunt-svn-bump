@@ -1,6 +1,8 @@
 # grunt-svn-bump v0.2.0
 
-*This is mostly a copy of [grunt-contrib-bump](https://github.com/gruntjs/grunt-contrib-bump) for svn projects.*
+*This is mostly a copy of
+[grunt-contrib-bump](https://github.com/gruntjs/grunt-contrib-bump) for svn
+projects.*
 
 > Bump the version property of a JSON file, the date property if it exists, and
 > commit those changes.
@@ -11,19 +13,22 @@ repo afterwards. See [grunt-svn-tag](https://github.com/iVantage/grunt-svn-tag).
 ## Getting Started
 This plugin requires Grunt `~0.4.1`
 
-If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
+If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out
+the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains
+how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as
+install and use Grunt plugins. Once you're familiar with that process, you may
+install this plugin with this command:
 
 ```shell
 npm install grunt-contrib-bump --save-dev
 ```
 
-Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
+Once the plugin has been installed, it may be enabled inside your Gruntfile with
+this line of JavaScript:
 
 ```js
 grunt.loadNpmTasks('grunt-contrib-bump');
 ```
-
-
 
 
 ## Bump task
@@ -55,30 +60,6 @@ Type: `String`
 Default: `'Bumping version to 0.1.0.'`
 
 The message format to use when committing a release.
-
-#### tag
-Type: `Boolean`  
-Default: `true`
-
-Whether to tag a release.
-
-#### tagName
-Type: `String`  
-Default: `'v0.1.0'`
-
-The name of the tag when tagging a release.
-
-#### tagMessage
-Type: `String`  
-Default: `'Version 0.1.0'`
-
-The message of the tag when tagging a release.
-
-#### tagPrerelease
-Type: `Boolean`  
-Default: `false`
-
-Whether to tag prerelease versions.
 
 #### updateDate
 Type: `Boolean`
