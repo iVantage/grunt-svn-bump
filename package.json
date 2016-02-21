@@ -3,13 +3,16 @@
   "description": "Bump the version property of a JSON file.",
   "version": "0.2.2",
   "homepage": "https://github.com/ivantage/grunt-svn-bump",
-  "author": [{
-    "name": "Grunt Team",
-    "url": "http://gruntjs.com/"
-  },{
-    "name": "iVantage Health Analytics",
-    "url": "http://www.ivantagehealth.com/"
-  }],
+  "author": [
+    {
+      "name": "Grunt Team",
+      "url": "http://gruntjs.com/"
+    },
+    {
+      "name": "iVantage Health Analytics",
+      "url": "http://www.ivantagehealth.com/"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/ivantage/grunt-svn-bump.git"
@@ -37,7 +40,7 @@
     "grunt-contrib-internal": "~0.4.6"
   },
   "peerDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": ">=0.4.0"
   },
   "keywords": [
     "gruntplugin"
